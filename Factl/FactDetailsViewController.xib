@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FactDetailsViewController">
+            <connections>
+                <outlet property="commentTextField" destination="Ok1-uG-iZn" id="iuv-Yt-JaY"/>
+                <outlet property="commentView" destination="Fxu-em-2PX" id="jRW-mk-GkK"/>
+                <outlet property="detailTableView" destination="Vy8-AC-kPK" id="85l-04-lTN"/>
+                <outlet property="postCommentBtn" destination="gvK-QX-GOR" id="6gF-iM-U0L"/>
+                <outlet property="scrollView" destination="vq8-bj-bsa" id="NtO-DN-wAr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vq8-bj-bsa" customClass="TPKeyboardAvoidingScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vy8-AC-kPK" userLabel="Detail Table View">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                            <color key="backgroundColor" red="0.87784276829999996" green="0.87784276829999996" blue="0.87784276829999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="528" id="27y-iZ-RT4"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="528" id="djy-zZ-9i3"/>
+                            </constraints>
+                            <color key="sectionIndexColor" red="0.87784276829999996" green="0.87784276829999996" blue="0.87784276829999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="sectionIndexBackgroundColor" red="0.87784276829999996" green="0.87784276829999996" blue="0.87784276829999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="sectionIndexTrackingBackgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="3rP-vo-uoS"/>
+                                <outlet property="delegate" destination="-1" id="SeH-hY-kUv"/>
+                            </connections>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxu-em-2PX">
+                            <rect key="frame" x="0.0" y="528" width="320" height="40"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment... " textAlignment="natural" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ok1-uG-iZn">
+                                    <rect key="frame" x="7" y="5" width="252" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="3ef-SE-tkA"/>
+                                    </connections>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-QX-GOR">
+                                    <rect key="frame" x="259" y="5" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <state key="normal" title="Post">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="postFact:" destination="-1" eventType="touchUpInside" id="qFl-Hd-U4e"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="rfI-2q-TrS"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="z0G-iy-kYB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Vy8-AC-kPK" firstAttribute="leading" secondItem="vq8-bj-bsa" secondAttribute="leading" id="7vR-Vp-wGg"/>
+                        <constraint firstItem="Vy8-AC-kPK" firstAttribute="trailing" secondItem="Fxu-em-2PX" secondAttribute="trailing" id="8Rm-CA-uoS"/>
+                        <constraint firstItem="Vy8-AC-kPK" firstAttribute="top" secondItem="vq8-bj-bsa" secondAttribute="top" id="9td-Az-KmJ"/>
+                        <constraint firstAttribute="bottom" secondItem="Vy8-AC-kPK" secondAttribute="bottom" constant="40" id="APN-Y9-dAT"/>
+                        <constraint firstItem="Vy8-AC-kPK" firstAttribute="leading" secondItem="Fxu-em-2PX" secondAttribute="leading" id="MZv-0P-Wvd"/>
+                        <constraint firstItem="Vy8-AC-kPK" firstAttribute="centerX" secondItem="vq8-bj-bsa" secondAttribute="centerX" id="dIN-wT-BeD"/>
+                        <constraint firstAttribute="trailing" secondItem="Vy8-AC-kPK" secondAttribute="trailing" id="gCz-A4-9gd"/>
+                        <constraint firstItem="Fxu-em-2PX" firstAttribute="top" secondItem="Vy8-AC-kPK" secondAttribute="bottom" id="rIn-tM-S4F"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="mXl-jv-ZpQ"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vq8-bj-bsa" firstAttribute="bottom" secondItem="fab-cw-wHT" secondAttribute="bottom" id="S7i-Za-FkP"/>
+                <constraint firstAttribute="trailing" secondItem="vq8-bj-bsa" secondAttribute="trailing" id="VVv-W0-laW"/>
+                <constraint firstItem="vq8-bj-bsa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZvV-if-du0"/>
+                <constraint firstItem="vq8-bj-bsa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gzY-KC-KdR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fab-cw-wHT"/>
+            <point key="canvasLocation" x="521.60000000000002" y="367.91604197901052"/>
+        </view>
+    </objects>
+</document>
